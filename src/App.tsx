@@ -26,15 +26,15 @@ import VoiceAgent from './VoiceAgent';
 
 // --- Components ---
 
-const Logo = ({ className = "h-10" }) => (
+const Logo = ({ className = "h-14" }) => (
   <img src="/logo.png" alt="OpenPerp Logo" className={className} style={{ objectFit: 'contain' }} />
 );
 
 const Navbar = () => (
   <nav className="fixed top-0 left-0 right-0 z-50 border-b border-accent-gold/20 bg-accent-gold/5 backdrop-blur-xl">
-    <div className="max-w-7xl mx-auto px-6 h-20 flex items-center justify-between">
-      <div className="flex items-center gap-2">
-        <Logo className="h-12" />
+    <div className="max-w-[1440px] mx-auto px-4 h-24 flex items-center justify-between">
+      <div className="flex items-center -ml-2">
+        <Logo className="h-20" />
       </div>
 
       <div className="hidden md:flex items-center gap-8 text-sm font-medium text-white/60">
@@ -42,7 +42,7 @@ const Navbar = () => (
           href="https://cal.com/hammad-nasir-a7w2pg"
           target="_blank"
           rel="noopener noreferrer"
-          className="px-5 py-2 rounded-full bg-accent-gold text-black font-bold hover:bg-white transition-all"
+          className="px-6 py-3 rounded-full bg-accent-gold text-black font-bold hover:bg-white transition-all transform hover:scale-105 active:scale-95"
         >
           Book a Call
         </a>
