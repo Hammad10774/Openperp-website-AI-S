@@ -21,6 +21,8 @@ import {
   MessageSquare
 } from 'lucide-react';
 
+import RoboAnimation from './RoboAnimation';
+
 // --- Components ---
 
 const Logo = ({ className = "h-10" }) => (
@@ -341,7 +343,8 @@ const Footer = () => (
 
 export default function App() {
   return (
-    <div className="min-h-screen font-sans">
+    <div className="min-h-screen font-sans bg-black">
+      <RoboAnimation />
       <Navbar />
 
       <main>
