@@ -25,6 +25,7 @@ import VoiceAgent from './VoiceAgent';
 import { SplineScene } from "@/components/ui/splite";
 import { Card } from "@/components/ui/card";
 import { Spotlight } from "@/components/ui/spotlight";
+import { Button as MovingBorderButton } from "@/components/ui/moving-border";
 
 // --- Components ---
 
@@ -96,14 +97,15 @@ const Hero = () => (
               transition={{ delay: 0.2, duration: 1 }}
               className="flex flex-col sm:flex-row gap-4 justify-center lg:justify-start"
             >
-              <a
-                href="https://cal.com/hammad-nasir-a7w2pg"
-                target="_blank"
-                rel="noopener noreferrer"
-                className="inline-block px-8 py-4 rounded-full bg-white text-black font-bold text-base hover:scale-105 transition-transform shadow-[0_0_40px_rgba(255,255,255,0.2)]"
+              <MovingBorderButton
+                borderRadius="3rem"
+                duration={3000}
+                className="bg-black/40 border-accent-gold/20 text-white font-bold text-base"
+                containerClassName="w-auto h-auto px-8 py-4"
+                onClick={() => window.open("https://cal.com/hammad-nasir-a7w2pg", "_blank")}
               >
                 Book a Free 1-2-1 Call
-              </a>
+              </MovingBorderButton>
             </motion.div>
           </div>
         </div>
