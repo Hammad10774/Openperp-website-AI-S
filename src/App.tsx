@@ -22,6 +22,7 @@ import {
 } from 'lucide-react';
 
 import RoboAnimation from './RoboAnimation';
+import VoiceAgent from './VoiceAgent';
 
 // --- Components ---
 
@@ -386,12 +387,7 @@ export default function App() {
 
       <Footer />
 
-      {/* Floating Chat Button Placeholder */}
-      <div className="fixed bottom-8 right-8 z-50">
-        <button className="w-14 h-14 rounded-full bg-accent-blue shadow-lg shadow-accent-blue/20 flex items-center justify-center hover:scale-110 transition-transform">
-          <MessageSquare className="w-6 h-6 text-white" />
-        </button>
-      </div>
+      <VoiceAgent />
     </div>
   );
 }
