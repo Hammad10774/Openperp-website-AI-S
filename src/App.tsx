@@ -22,6 +22,9 @@ import {
 } from 'lucide-react';
 
 import VoiceAgent from './VoiceAgent';
+import { SplineScene } from "@/components/ui/splite";
+import { Card } from "@/components/ui/card";
+import { Spotlight } from "@/components/ui/spotlight";
 
 // --- Components ---
 
@@ -51,30 +54,67 @@ const Navbar = () => (
 );
 
 const Hero = () => (
-  <section className="relative pt-40 pb-20 overflow-hidden">
+  <section className="relative pt-32 pb-20 overflow-hidden">
     <div className="absolute top-0 left-1/2 -translate-x-1/2 w-[150%] h-[800px] glow-horizon -z-10 opacity-50" />
 
-    <div className="max-w-7xl mx-auto px-6 text-center">
-      <motion.div
-        initial={{ opacity: 0, y: 20 }}
-        animate={{ opacity: 1, y: 0 }}
-        transition={{ duration: 0.8 }}
-      >
-        <h1 className="text-5xl md:text-8xl font-extrabold tracking-tight mb-6 leading-[1.1]">
-          Scale Your Business <br />
-          <span className="bg-clip-text text-transparent bg-gradient-to-r from-accent-blue via-accent-purple to-accent-blue animate-gradient">with AI Systems</span>
-        </h1>
-        <p className="text-lg md:text-xl text-white/60 max-w-2xl mx-auto mb-12 font-light">
-          Discover your AI bottlenecks, deploy high ROI systems, and <br className="hidden md:block" />
-          access world-class AI automation.
-        </p>
-      </motion.div>
+    <div className="max-w-7xl mx-auto px-6">
+      <Card className="w-full min-h-[600px] bg-black/40 border-white/5 relative overflow-hidden backdrop-blur-sm">
+        <Spotlight
+          className="-top-40 left-0 md:left-60 md:-top-20"
+          fill="white"
+        />
 
+        <div className="flex flex-col lg:flex-row h-full items-center">
+          {/* Left content: 3D Scene */}
+          <div className="flex-1 w-full h-[400px] lg:h-[600px] relative order-2 lg:order-1">
+            <SplineScene
+              scene="https://prod.spline.design/kZDDjO5HuC9GJUM2/scene.splinecode"
+              className="w-full h-full"
+            />
+          </div>
+
+          {/* Right content: Text */}
+          <div className="flex-1 p-8 lg:p-12 relative z-10 flex flex-col justify-center order-1 lg:order-2 text-center lg:text-left">
+            <motion.div
+              initial={{ opacity: 0, y: 20 }}
+              animate={{ opacity: 1, y: 0 }}
+              transition={{ duration: 0.8 }}
+            >
+              <h1 className="text-4xl md:text-6xl font-extrabold tracking-tight mb-6 leading-[1.1]">
+                Scale Your Business <br />
+                <span className="bg-clip-text text-transparent bg-gradient-to-r from-accent-blue via-accent-purple to-accent-blue animate-gradient">with AI Systems</span>
+              </h1>
+              <p className="text-base md:text-lg text-white/60 max-w-lg mb-8 font-light mx-auto lg:mx-0">
+                Discover your AI bottlenecks, deploy high ROI systems, and access world-class AI automation.
+                We build the future of your workflow today.
+              </p>
+            </motion.div>
+
+            <motion.div
+              initial={{ opacity: 0, scale: 0.95 }}
+              animate={{ opacity: 1, scale: 1 }}
+              transition={{ delay: 0.2, duration: 1 }}
+              className="flex flex-col sm:flex-row gap-4 justify-center lg:justify-start"
+            >
+              <a
+                href="https://cal.com/hammad-nasir-a7w2pg"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="inline-block px-8 py-4 rounded-full bg-white text-black font-bold text-base hover:scale-105 transition-transform shadow-[0_0_40px_rgba(255,255,255,0.2)]"
+              >
+                Book a Free 1-2-1 Call
+              </a>
+            </motion.div>
+          </div>
+        </div>
+      </Card>
+
+      {/* Dashboard section originally inside Hero, now placed below the card for better layout flow */}
       <motion.div
-        initial={{ opacity: 0, scale: 0.95 }}
-        animate={{ opacity: 1, scale: 1 }}
-        transition={{ delay: 0.2, duration: 1 }}
-        className="relative mx-auto max-w-5xl"
+        initial={{ opacity: 0, y: 40 }}
+        animate={{ opacity: 1, y: 0 }}
+        transition={{ delay: 0.4, duration: 1 }}
+        className="relative mx-auto max-w-5xl mt-20"
       >
         <div className="glass-card p-4 md:p-8 shadow-2xl shadow-accent-gold/10">
           <div className="flex items-center gap-2 mb-6 border-b border-white/10 pb-4">
@@ -142,17 +182,6 @@ const Hero = () => (
               </div>
             </div>
           </div>
-        </div>
-
-        <div className="mt-12">
-          <a
-            href="https://cal.com/hammad-nasir-a7w2pg"
-            target="_blank"
-            rel="noopener noreferrer"
-            className="inline-block px-10 py-5 rounded-full bg-white text-black font-bold text-lg hover:scale-105 transition-transform shadow-[0_0_40px_rgba(255,255,255,0.2)]"
-          >
-            Book a Free 1-2-1 Call
-          </a>
         </div>
       </motion.div>
     </div>
