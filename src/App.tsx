@@ -64,9 +64,11 @@ const Navbar = () => (
 );
 
 const Hero = () => (
-  <section className="relative pt-32 pb-20 overflow-hidden">
-    <AnoAI />
-    <div className="absolute top-0 left-1/2 -translate-x-1/2 w-[150%] h-[800px] glow-horizon -z-10 opacity-50" />
+  <section className="relative pt-32 pb-20 overflow-hidden min-h-[800px] flex items-center">
+    <div className="absolute inset-0 z-0">
+      <AnoAI />
+    </div>
+    <div className="absolute top-0 left-1/2 -translate-x-1/2 w-[150%] h-[800px] glow-horizon -z-10 opacity-30" />
 
     <div className="max-w-7xl mx-auto px-6">
       <Card className="w-full min-h-[600px] bg-black/40 border-white/5 relative overflow-hidden backdrop-blur-sm">
