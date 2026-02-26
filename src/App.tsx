@@ -26,6 +26,8 @@ import { SplineScene } from "@/components/ui/splite";
 import { Card } from "@/components/ui/card";
 import { Spotlight } from "@/components/ui/spotlight";
 import { Button as MovingBorderButton } from "@/components/ui/moving-border";
+import { GlowingShadow } from "@/components/ui/glowing-shadow";
+import AnoAI from "@/components/ui/animated-shader-background";
 
 // --- Components ---
 
@@ -40,12 +42,19 @@ const Navbar = () => (
         <Logo className="h-20" />
       </div>
 
-      <div className="hidden md:flex items-center gap-8 text-sm font-medium text-white/60">
+      <div className="hidden lg:flex items-center gap-6 text-sm font-medium">
+        <GlowingShadow
+          onClick={() => window.open("https://docs.google.com/forms/d/e/1FAIpQLSd1maHR9abt_Nsa68jgO5D82bigxv64KCJU2ERblXeqkKLpdw/viewform?usp=publish-editor", "_blank")}
+        >
+          <span className="px-5 py-2.5 font-bold whitespace-nowrap">
+            Free Invoice To Google Sheet Automation
+          </span>
+        </GlowingShadow>
         <a
           href="https://cal.com/hammad-nasir-a7w2pg"
           target="_blank"
           rel="noopener noreferrer"
-          className="px-6 py-3 rounded-full bg-accent-gold text-black font-bold hover:bg-white transition-all transform hover:scale-105 active:scale-95"
+          className="px-6 py-3 rounded-full bg-accent-gold text-black font-bold hover:bg-white transition-all transform hover:scale-105 active:scale-95 whitespace-nowrap"
         >
           Book a Call
         </a>
@@ -56,6 +65,7 @@ const Navbar = () => (
 
 const Hero = () => (
   <section className="relative pt-32 pb-20 overflow-hidden">
+    <AnoAI />
     <div className="absolute top-0 left-1/2 -translate-x-1/2 w-[150%] h-[800px] glow-horizon -z-10 opacity-50" />
 
     <div className="max-w-7xl mx-auto px-6">
