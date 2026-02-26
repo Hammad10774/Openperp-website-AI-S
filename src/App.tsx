@@ -37,9 +37,9 @@ const Logo = ({ className = "h-14" }) => (
 
 const Navbar = () => (
   <nav className="fixed top-0 left-0 right-0 z-50 border-b border-accent-gold/20 bg-accent-gold/5 backdrop-blur-xl">
-    <div className="max-w-[1440px] mx-auto px-4 h-20 md:h-24 flex items-center justify-between gap-4">
-      <div className="flex items-center -ml-2 shrink-0">
-        <Logo className="h-14 md:h-20" />
+    <div className="max-w-[1440px] mx-auto px-4 h-20 md:h-24 flex items-center justify-between gap-2 md:gap-4">
+      <div className="flex items-center -ml-1 md:-ml-2 shrink-0">
+        <Logo className="h-12 md:h-20" />
       </div>
 
       <div className="flex items-center gap-2 md:gap-6 text-[10px] sm:text-xs md:text-sm font-medium">
@@ -47,15 +47,16 @@ const Navbar = () => (
           onClick={() => window.open("https://docs.google.com/forms/d/e/1FAIpQLSd1maHR9abt_Nsa68jgO5D82bigxv64KCJU2ERblXeqkKLpdw/viewform?usp=publish-editor", "_blank")}
         >
           <span className="px-3 py-2 md:px-5 md:py-2.5 font-bold whitespace-nowrap">
-            <span className="hidden md:inline">Free Invoice To Google Sheet Automation</span>
-            <span className="md:hidden">Free Automation</span>
+            <span className="hidden lg:inline">Free Invoice To Google Sheet Automation</span>
+            <span className="hidden sm:inline lg:hidden">Free Invoice Automation</span>
+            <span className="sm:hidden">Get Free Automation</span>
           </span>
         </GlowingShadow>
         <a
           href="https://cal.com/hammad-nasir-a7w2pg"
           target="_blank"
           rel="noopener noreferrer"
-          className="px-4 py-2 md:px-6 md:py-3 rounded-full bg-accent-gold text-black font-bold hover:bg-white transition-all transform hover:scale-105 active:scale-95 whitespace-nowrap shrink-0"
+          className="px-4 py-2 md:px-8 md:py-3.5 rounded-full bg-accent-gold text-black font-bold hover:bg-white transition-all transform hover:scale-105 active:scale-95 whitespace-nowrap shrink-0 shadow-[0_0_20px_rgba(194,155,97,0.3)]"
         >
           Book<span className="hidden xs:inline"> a Call</span>
         </a>
@@ -65,40 +66,42 @@ const Navbar = () => (
 );
 
 const Hero = () => (
-  <section className="relative pt-32 pb-20 overflow-hidden min-h-[800px] flex items-center">
+  <section className="relative pt-24 md:pt-32 pb-20 overflow-hidden min-h-screen flex items-center">
     <div className="absolute inset-0 z-0">
       <AnoAI />
     </div>
     <div className="absolute top-0 left-1/2 -translate-x-1/2 w-[150%] h-[800px] glow-horizon -z-10 opacity-30" />
 
-    <div className="max-w-7xl mx-auto px-6">
-      <Card className="w-full min-h-[600px] bg-black/40 border-white/5 relative overflow-hidden backdrop-blur-sm">
+    <div className="max-w-7xl mx-auto px-4 md:px-6 w-full">
+      <Card className="w-full min-h-[700px] md:min-h-[600px] bg-black/40 border-white/5 relative overflow-hidden backdrop-blur-md">
         <Spotlight
           className="-top-40 left-0 md:left-60 md:-top-20"
           fill="white"
         />
 
-        <div className="flex flex-col lg:flex-row h-full items-center">
-          {/* Left content: 3D Scene */}
-          <div className="flex-1 w-full h-[400px] lg:h-[600px] relative order-2 lg:order-1">
-            <SplineScene
-              scene="https://prod.spline.design/kZDDjO5HuC9GJUM2/scene.splinecode"
-              className="w-full h-full"
-            />
+        <div className="flex flex-col lg:flex-row h-full items-center py-10 lg:py-0">
+          {/* Top content on mobile: 3D Scene (The Robot) */}
+          <div className="flex-1 w-full h-[450px] sm:h-[550px] lg:h-[600px] relative order-1">
+            <div className="absolute inset-0 scale-125 md:scale-100">
+              <SplineScene
+                scene="https://prod.spline.design/kZDDjO5HuC9GJUM2/scene.splinecode"
+                className="w-full h-full"
+              />
+            </div>
           </div>
 
-          {/* Right content: Text */}
-          <div className="flex-1 p-8 lg:p-12 relative z-10 flex flex-col justify-center order-1 lg:order-2 text-center lg:text-left">
+          {/* Bottom content on mobile: Text */}
+          <div className="flex-1 p-6 md:p-8 lg:p-12 relative z-10 flex flex-col justify-center order-2 text-center lg:text-left">
             <motion.div
               initial={{ opacity: 0, y: 20 }}
               animate={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.8 }}
             >
-              <h1 className="text-4xl md:text-6xl font-extrabold tracking-tight mb-6 leading-[1.1]">
+              <h1 className="text-4xl md:text-6xl lg:text-7xl font-extrabold tracking-tight mb-6 leading-[1.1]">
                 Scale Your Business <br />
                 <span className="bg-clip-text text-transparent bg-gradient-to-r from-accent-blue via-accent-purple to-accent-blue animate-gradient">with AI Systems</span>
               </h1>
-              <p className="text-base md:text-lg text-white/60 max-w-lg mb-8 font-light mx-auto lg:mx-0">
+              <p className="text-base md:text-lg text-white/70 max-w-lg mb-10 font-light mx-auto lg:mx-0">
                 Discover your AI bottlenecks, deploy high ROI systems, and access world-class AI automation.
                 We build the future of your workflow today.
               </p>
@@ -114,7 +117,7 @@ const Hero = () => (
                 borderRadius="3rem"
                 duration={3000}
                 className="bg-black/40 border-accent-gold/20 text-white font-bold text-base"
-                containerClassName="w-auto h-auto px-8 py-4"
+                containerClassName="w-full sm:w-auto h-auto px-8 py-4"
                 onClick={() => window.open("https://cal.com/hammad-nasir-a7w2pg", "_blank")}
               >
                 Book a Free 1-2-1 Call
@@ -205,27 +208,27 @@ const Hero = () => (
 
 const TechMarquee = () => {
   const icons = [
-    { name: 'GitHub', icon: <Globe className="w-6 h-6" /> },
-    { name: 'Notion', icon: <Layers className="w-6 h-6" /> },
-    { name: 'Gmail', icon: <MessageSquare className="w-6 h-6" /> },
-    { name: 'Figma', icon: <Zap className="w-6 h-6" /> },
-    { name: 'Slack', icon: <Users className="w-6 h-6" /> },
-    { name: 'OpenAI', icon: <Bot className="w-6 h-6" /> },
-    { name: 'Anthropic', icon: <Cpu className="w-6 h-6" /> },
+    { name: 'GitHub', icon: <Globe className="h-5 w-5 md:w-6 md:h-6" /> },
+    { name: 'Notion', icon: <Layers className="h-5 w-5 md:w-6 md:h-6" /> },
+    { name: 'Gmail', icon: <MessageSquare className="h-5 w-5 md:w-6 md:h-6" /> },
+    { name: 'Figma', icon: <Zap className="h-5 w-5 md:w-6 md:h-6" /> },
+    { name: 'Slack', icon: <Users className="h-5 w-5 md:w-6 md:h-6" /> },
+    { name: 'OpenAI', icon: <Bot className="h-5 w-5 md:w-6 md:h-6" /> },
+    { name: 'Anthropic', icon: <Cpu className="h-5 w-5 md:w-6 md:h-6" /> },
   ];
 
   return (
-    <div className="py-20 border-y border-white/5 overflow-hidden bg-black/20">
-      <div className="text-center mb-10 text-[10px] font-mono text-white/30 uppercase tracking-[0.3em]">Build with your favorite tech</div>
+    <div className="py-12 md:py-20 border-y border-white/5 overflow-hidden bg-black/20">
+      <div className="text-center mb-6 md:mb-10 text-[9px] md:text-[10px] font-mono text-white/30 uppercase tracking-[0.3em] px-4">Build with your favorite tech</div>
       <div className="flex whitespace-nowrap animate-marquee">
         {[...Array(4)].map((_, i) => (
-          <div key={i} className="flex gap-16 items-center px-8">
+          <div key={i} className="flex gap-8 md:gap-16 items-center px-4 md:px-8">
             {icons.map((tech, idx) => (
-              <div key={idx} className="flex items-center gap-3 text-white/40 grayscale hover:grayscale-0 transition-all cursor-default">
-                <div className="p-3 rounded-xl bg-white/5 border border-white/5">
+              <div key={idx} className="flex items-center gap-2 md:gap-3 text-white/40 grayscale hover:grayscale-0 transition-all cursor-default">
+                <div className="p-2 md:p-3 rounded-xl bg-white/5 border border-white/5">
                   {tech.icon}
                 </div>
-                <span className="font-medium text-sm">{tech.name}</span>
+                <span className="font-medium text-xs md:text-sm">{tech.name}</span>
               </div>
             ))}
           </div>
@@ -236,22 +239,22 @@ const TechMarquee = () => {
 };
 
 const FeatureSection = ({ number, title, subtitle, description, badge, colorClass, children }: any) => (
-  <section className="py-24 max-w-7xl mx-auto px-6 grid grid-cols-1 lg:grid-cols-2 gap-16 items-center">
+  <section className="py-16 md:py-24 max-w-7xl mx-auto px-6 grid grid-cols-1 lg:grid-cols-2 gap-10 md:gap-16 items-center">
     <div className={number % 2 === 0 ? 'lg:order-2' : ''}>
       <div className={`inline-flex items-center gap-2 px-3 py-1 rounded-full text-[10px] font-bold uppercase tracking-wider mb-6 ${colorClass} bg-opacity-10 border border-current border-opacity-20`}>
         <span className="opacity-60">{badge}</span>
       </div>
-      <h2 className="text-4xl md:text-6xl font-bold mb-6 leading-tight">
+      <h2 className="text-3xl md:text-5xl lg:text-6xl font-bold mb-6 leading-tight">
         {title} <br />
         <span className={`opacity-60 ${colorClass.replace('text-', 'text-opacity-60 text-')}`}>{subtitle}</span>
       </h2>
-      <p className="text-lg text-white/50 mb-8 max-w-xl leading-relaxed">
+      <p className="text-base md:text-lg text-white/50 mb-8 max-w-xl leading-relaxed">
         {description}
       </p>
       {children}
     </div>
     <div className={`relative ${number % 2 === 0 ? 'lg:order-1' : ''}`}>
-      <div className="glass-card p-8 border-white/5 bg-gradient-to-br from-white/5 to-transparent">
+      <div className="glass-card p-6 md:p-8 border-white/5 bg-gradient-to-br from-white/5 to-transparent">
         {/* Visual representation of the feature */}
         {number === 1 && (
           <div className="space-y-4">
@@ -272,37 +275,37 @@ const FeatureSection = ({ number, title, subtitle, description, badge, colorClas
             ))}
             <div className="grid grid-cols-2 gap-4 mt-8">
               <div className="bg-white/5 p-4 rounded-xl border border-white/5">
-                <div className="text-2xl font-bold">$390k+</div>
-                <div className="text-[10px] text-white/30 uppercase mt-1">Projected Annual Value</div>
+                <div className="text-xl md:text-2xl font-bold">$390k+</div>
+                <div className="text-[9px] md:text-[10px] text-white/30 uppercase mt-1">Projected Annual Value</div>
               </div>
               <div className="bg-white/5 p-4 rounded-xl border border-white/5">
-                <div className="text-2xl font-bold">13x</div>
-                <div className="text-[10px] text-white/30 uppercase mt-1">ROI Year 1</div>
+                <div className="text-xl md:text-2xl font-bold">13x</div>
+                <div className="text-[9px] md:text-[10px] text-white/30 uppercase mt-1">ROI Year 1</div>
               </div>
             </div>
           </div>
         )}
         {number === 2 && (
           <div className="space-y-6">
-            <div className="h-40 bg-white/5 rounded-xl border border-white/5 relative overflow-hidden flex items-center justify-center">
+            <div className="h-32 md:h-40 bg-white/5 rounded-xl border border-white/5 relative overflow-hidden flex items-center justify-center">
               <div className="absolute inset-0 bg-gradient-to-t from-accent-purple/20 to-transparent" />
-              <Bot className="w-16 h-16 text-accent-purple animate-pulse" />
+              <Bot className="w-12 h-12 md:w-16 md:h-16 text-accent-purple animate-pulse" />
             </div>
             <div className="space-y-3">
               <div className="h-2 w-3/4 bg-white/10 rounded-full" />
               <div className="h-2 w-1/2 bg-white/10 rounded-full" />
               <div className="flex gap-2 pt-2">
-                <div className="h-8 w-24 bg-accent-purple/20 rounded-lg border border-accent-purple/30 flex items-center justify-center text-[10px] font-bold">New Lead Captured</div>
+                <div className="h-8 px-3 bg-accent-purple/20 rounded-lg border border-accent-purple/30 flex items-center justify-center text-[10px] font-bold">New Lead Captured</div>
               </div>
             </div>
             <div className="grid grid-cols-2 gap-4">
               <div className="bg-white/5 p-4 rounded-xl border border-white/5">
-                <div className="text-xl font-bold">80-320hrs</div>
-                <div className="text-[10px] text-white/30 uppercase mt-1">Time Saved Monthly</div>
+                <div className="text-lg md:text-xl font-bold">80-320hrs</div>
+                <div className="text-[9px] md:text-[10px] text-white/30 uppercase mt-1">Time Saved Monthly</div>
               </div>
               <div className="bg-white/5 p-4 rounded-xl border border-white/5">
-                <div className="text-xl font-bold">100%</div>
-                <div className="text-[10px] text-white/30 uppercase mt-1">ROI Guaranteed</div>
+                <div className="text-lg md:text-xl font-bold">100%</div>
+                <div className="text-[9px] md:text-[10px] text-white/30 uppercase mt-1">ROI Guaranteed</div>
               </div>
             </div>
           </div>
