@@ -79,15 +79,13 @@ const Hero = () => (
           fill="white"
         />
 
-        <div className="flex flex-col lg:flex-row h-full items-center py-10 lg:py-0">
+        <div className="flex flex-col lg:flex-row h-full items-center py-6 lg:py-0">
           {/* Top content on mobile: 3D Scene (The Robot) */}
-          <div className="flex-1 w-full h-[450px] sm:h-[550px] lg:h-[600px] relative order-1">
-            <div className="absolute inset-0 scale-125 md:scale-100">
-              <SplineScene
-                scene="https://prod.spline.design/kZDDjO5HuC9GJUM2/scene.splinecode"
-                className="w-full h-full"
-              />
-            </div>
+          <div className="flex-1 w-full h-[480px] sm:h-[560px] lg:h-[600px] relative order-1">
+            <SplineScene
+              scene="https://prod.spline.design/kZDDjO5HuC9GJUM2/scene.splinecode"
+              className="w-full h-full"
+            />
           </div>
 
           {/* Bottom content on mobile: Text */}
