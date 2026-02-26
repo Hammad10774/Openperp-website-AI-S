@@ -37,26 +37,27 @@ const Logo = ({ className = "h-14" }) => (
 
 const Navbar = () => (
   <nav className="fixed top-0 left-0 right-0 z-50 border-b border-accent-gold/20 bg-accent-gold/5 backdrop-blur-xl">
-    <div className="max-w-[1440px] mx-auto px-4 h-24 flex items-center justify-between">
-      <div className="flex items-center -ml-2">
-        <Logo className="h-20" />
+    <div className="max-w-[1440px] mx-auto px-4 h-20 md:h-24 flex items-center justify-between gap-4">
+      <div className="flex items-center -ml-2 shrink-0">
+        <Logo className="h-14 md:h-20" />
       </div>
 
-      <div className="hidden lg:flex items-center gap-6 text-sm font-medium">
+      <div className="flex items-center gap-2 md:gap-6 text-[10px] sm:text-xs md:text-sm font-medium">
         <GlowingShadow
           onClick={() => window.open("https://docs.google.com/forms/d/e/1FAIpQLSd1maHR9abt_Nsa68jgO5D82bigxv64KCJU2ERblXeqkKLpdw/viewform?usp=publish-editor", "_blank")}
         >
-          <span className="px-5 py-2.5 font-bold whitespace-nowrap">
-            Free Invoice To Google Sheet Automation
+          <span className="px-3 py-2 md:px-5 md:py-2.5 font-bold whitespace-nowrap">
+            <span className="hidden md:inline">Free Invoice To Google Sheet Automation</span>
+            <span className="md:hidden">Free Automation</span>
           </span>
         </GlowingShadow>
         <a
           href="https://cal.com/hammad-nasir-a7w2pg"
           target="_blank"
           rel="noopener noreferrer"
-          className="px-6 py-3 rounded-full bg-accent-gold text-black font-bold hover:bg-white transition-all transform hover:scale-105 active:scale-95 whitespace-nowrap"
+          className="px-4 py-2 md:px-6 md:py-3 rounded-full bg-accent-gold text-black font-bold hover:bg-white transition-all transform hover:scale-105 active:scale-95 whitespace-nowrap shrink-0"
         >
-          Book a Call
+          Book<span className="hidden xs:inline"> a Call</span>
         </a>
       </div>
     </div>
