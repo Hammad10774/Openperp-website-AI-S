@@ -5,6 +5,7 @@
 
 import React, { useState, useEffect } from 'react';
 import { motion, AnimatePresence } from 'motion/react';
+import { BrowserRouter as Router, Routes, Route, useNavigate, Link } from 'react-router-dom';
 import {
   ArrowRight,
   BarChart3,
@@ -18,7 +19,8 @@ import {
   Cpu,
   Bot,
   Layers,
-  MessageSquare
+  MessageSquare,
+  ChevronDown
 } from 'lucide-react';
 
 import VoiceAgent from './VoiceAgent';
@@ -29,11 +31,88 @@ import { Button as MovingBorderButton } from "@/components/ui/moving-border";
 import { GlowingShadow } from "@/components/ui/glowing-shadow";
 import AnoAI from "@/components/ui/animated-shader-background";
 
+// Pages
+import AIAutomationServices from './pages/AIAutomationServices';
+import AIChatbotServices from './pages/AIChatbotServices';
+import CustomAIDevelopment from './pages/CustomAIDevelopment';
+import AIMarketingServices from './pages/AIMarketingServices';
+import AISalesServices from './pages/AISalesServices';
+import AIOperationsServices from './pages/AIOperationsServices';
+import AIHRServices from './pages/AIHRServices';
+import AIFinanceServices from './pages/AIFinanceServices';
+import AIConsultingServices from './pages/AIConsultingServices';
+import AISaaSDevelopment from './pages/AISaaSDevelopment';
+import DataEngineeringServices from './pages/DataEngineeringServices';
+
 // --- Components ---
 
 const Logo = ({ className = "h-14" }) => (
-  <img src="/logo.png" alt="OpenPerp Logo" className={className} style={{ objectFit: 'contain' }} />
+  <Link to="/" className="flex items-center">
+    <img src="/logo.png" alt="OpenPerp Logo" className={className} style={{ objectFit: 'contain' }} />
+  </Link>
 );
+
+const services = [
+  { name: "AI Automation Services", path: "/ai-automation-services" },
+  { name: "AI Chatbot & Conversational AI", path: "/ai-chatbot-services" },
+  { name: "Custom AI Development", path: "/custom-ai-development" },
+  { name: "AI-Powered Marketing Services", path: "/ai-marketing-services" },
+  { name: "AI for Sales Teams", path: "/ai-sales-services" },
+  { name: "AI for Operations", path: "/ai-operations-services" },
+  { name: "AI for HR", path: "/ai-hr-services" },
+  { name: "AI for Finance & Accounting", path: "/ai-finance-services" },
+  { name: "AI Consulting & Strategy", path: "/ai-consulting-services" },
+  { name: "AI SaaS Development", path: "/ai-saas-development" },
+  { name: "Data Engineering & Infrastructure", path: "/data-engineering-services" }
+];
+
+const ServicesDropdown = () => {
+  const [isOpen, setIsOpen] = useState(false);
+  const navigate = useNavigate();
+
+  return (
+    <div className="relative" onMouseLeave={() => setIsOpen(false)}>
+      <button
+        onMouseEnter={() => setIsOpen(true)}
+        onClick={() => setIsOpen(!isOpen)}
+        className="flex items-center gap-1.5 px-5 py-2.5 rounded-full bg-accent-gold text-black font-bold text-[10px] sm:text-xs md:text-sm hover:bg-white transition-all transform hover:scale-105 active:scale-95 shadow-[0_0_20px_rgba(194,155,97,0.3)] whitespace-nowrap"
+      >
+        Services
+        <ChevronDown className={`w-4 h-4 transition-transform duration-300 ${isOpen ? 'rotate-180' : ''}`} />
+      </button>
+
+      <AnimatePresence>
+        {isOpen && (
+          <motion.div
+            initial={{ opacity: 0, y: 10, scale: 0.95 }}
+            animate={{ opacity: 1, y: 0, scale: 1 }}
+            exit={{ opacity: 0, y: 10, scale: 0.95 }}
+            transition={{ duration: 0.2, ease: "easeOut" }}
+            className="absolute top-full left-0 md:-left-10 mt-3 w-[280px] md:w-[320px] bg-black/95 backdrop-blur-2xl border border-white/10 rounded-2xl overflow-hidden shadow-[0_20px_50px_rgba(0,0,0,0.5)] z-50 p-2"
+          >
+            <div className="grid gap-1">
+              {services.map((service, index) => (
+                <button
+                  key={index}
+                  className="w-full text-left px-4 py-3 text-[11px] md:text-xs text-white/60 hover:text-accent-gold hover:bg-white/5 rounded-xl transition-all flex items-center justify-between group/item"
+                  onClick={() => {
+                    setIsOpen(false);
+                    if (service.path !== "#") {
+                      navigate(service.path);
+                    }
+                  }}
+                >
+                  <span className="font-medium tracking-tight tracking-wide">{service.name}</span>
+                  <ChevronRight className="w-3.5 h-3.5 opacity-0 -translate-x-2 group-hover/item:opacity-100 group-hover/item:translate-x-0 transition-all text-accent-gold" />
+                </button>
+              ))}
+            </div>
+          </motion.div>
+        )}
+      </AnimatePresence>
+    </div>
+  );
+};
 
 const Navbar = () => (
   <nav className="fixed top-0 left-0 right-0 z-50 border-b border-accent-gold/20 bg-accent-gold/5 backdrop-blur-xl">
@@ -42,24 +121,17 @@ const Navbar = () => (
         <Logo className="h-12 md:h-20" />
       </div>
 
-      <div className="flex items-center gap-2 md:gap-6 text-[10px] sm:text-xs md:text-sm font-medium">
+      <div className="flex items-center gap-1 md:gap-6 font-medium">
+        <ServicesDropdown />
         <GlowingShadow
           onClick={() => window.open("https://docs.google.com/forms/d/e/1FAIpQLSd1maHR9abt_Nsa68jgO5D82bigxv64KCJU2ERblXeqkKLpdw/viewform?usp=publish-editor", "_blank")}
         >
-          <span className="px-3 py-2 md:px-5 md:py-2.5 font-bold whitespace-nowrap">
+          <span className="px-3 py-2 md:px-5 md:py-2.5 font-bold whitespace-nowrap text-[10px] sm:text-xs md:text-sm">
             <span className="hidden lg:inline">Free Invoice To Google Sheet Automation</span>
             <span className="hidden sm:inline lg:hidden">Free Invoice Automation</span>
             <span className="sm:hidden">Get Free Automation</span>
           </span>
         </GlowingShadow>
-        <a
-          href="https://cal.com/hammad-nasir-a7w2pg"
-          target="_blank"
-          rel="noopener noreferrer"
-          className="px-4 py-2 md:px-8 md:py-3.5 rounded-full bg-accent-gold text-black font-bold hover:bg-white transition-all transform hover:scale-105 active:scale-95 whitespace-nowrap shrink-0 shadow-[0_0_20px_rgba(194,155,97,0.3)]"
-        >
-          Book<span className="hidden xs:inline"> a Call</span>
-        </a>
       </div>
     </div>
   </nav>
@@ -386,51 +458,68 @@ const Footer = () => (
   </footer>
 );
 
+const HomePage = () => (
+  <>
+    <Hero />
+    <TechMarquee />
+    <div id="solutions">
+      <FeatureSection
+        number={1}
+        badge="01. Audit"
+        title="Find the"
+        subtitle="Biggest Opportunities"
+        description="We identify your bottlenecks, uncover high-value opportunities, and quantify exactly how much time and money you're leaving on the table. You get a clear roadmap with project value and ROI projections so you can make informed decisions."
+        colorClass="text-accent-blue"
+      >
+        <div className="flex items-center gap-4 mt-10">
+          <CheckCircle2 className="text-accent-blue w-5 h-5" />
+          <span className="text-sm font-medium text-white/70">Full workflow mapping</span>
+        </div>
+        <div className="flex items-center gap-4 mt-4">
+          <CheckCircle2 className="text-accent-blue w-5 h-5" />
+          <span className="text-sm font-medium text-white/70">ROI Projection Report</span>
+        </div>
+      </FeatureSection>
+
+      <FeatureSection
+        number={2}
+        badge="02. Custom Projects"
+        title="Scale Without"
+        subtitle="Hiring More People"
+        description="From advanced lead generation and social media automation to complex data systems. Imagine doubling your output without doubling your team. Custom AI systems that handle the work of 5-10 employees, running 24/7 with zero mistakes. That's not the future. That's what we build today."
+        colorClass="text-accent-purple"
+      />
+    </div>
+    <Booking />
+  </>
+);
+
 export default function App() {
   return (
-    <div className="min-h-screen font-sans bg-black">
-      <Navbar />
+    <Router>
+      <div className="min-h-screen font-sans bg-black">
+        <Navbar />
 
-      <main>
-        <Hero />
+        <main>
+          <Routes>
+            <Route path="/" element={<HomePage />} />
+            <Route path="/ai-automation-services" element={<AIAutomationServices />} />
+            <Route path="/ai-chatbot-services" element={<AIChatbotServices />} />
+            <Route path="/custom-ai-development" element={<CustomAIDevelopment />} />
+            <Route path="/ai-marketing-services" element={<AIMarketingServices />} />
+            <Route path="/ai-sales-services" element={<AISalesServices />} />
+            <Route path="/ai-operations-services" element={<AIOperationsServices />} />
+            <Route path="/ai-hr-services" element={<AIHRServices />} />
+            <Route path="/ai-finance-services" element={<AIFinanceServices />} />
+            <Route path="/ai-consulting-services" element={<AIConsultingServices />} />
+            <Route path="/ai-saas-development" element={<AISaaSDevelopment />} />
+            <Route path="/data-engineering-services" element={<DataEngineeringServices />} />
+          </Routes>
+        </main>
 
-        <TechMarquee />
-
-        <div id="solutions">
-          <FeatureSection
-            number={1}
-            badge="01. Audit"
-            title="Find the"
-            subtitle="Biggest Opportunities"
-            description="We identify your bottlenecks, uncover high-value opportunities, and quantify exactly how much time and money you're leaving on the table. You get a clear roadmap with project value and ROI projections so you can make informed decisions."
-            colorClass="text-accent-blue"
-          >
-            <div className="flex items-center gap-4 mt-10">
-              <CheckCircle2 className="text-accent-blue w-5 h-5" />
-              <span className="text-sm font-medium text-white/70">Full workflow mapping</span>
-            </div>
-            <div className="flex items-center gap-4 mt-4">
-              <CheckCircle2 className="text-accent-blue w-5 h-5" />
-              <span className="text-sm font-medium text-white/70">ROI Projection Report</span>
-            </div>
-          </FeatureSection>
-
-          <FeatureSection
-            number={2}
-            badge="02. Custom Projects"
-            title="Scale Without"
-            subtitle="Hiring More People"
-            description="From advanced lead generation and social media automation to complex data systems. Imagine doubling your output without doubling your team. Custom AI systems that handle the work of 5-10 employees, running 24/7 with zero mistakes. That's not the future. That's what we build today."
-            colorClass="text-accent-purple"
-          />
-        </div>
-
-        <Booking />
-      </main>
-
-      <Footer />
-
-      <VoiceAgent />
-    </div>
+        <Footer />
+        <VoiceAgent />
+      </div>
+    </Router>
   );
 }
