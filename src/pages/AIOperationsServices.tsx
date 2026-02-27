@@ -1,6 +1,6 @@
 import React from 'react';
 import { motion } from 'framer-motion';
-import { ArrowLeft, Settings, BarChart, Calendar } from 'lucide-react';
+import { ArrowLeft, LayoutDashboard, BarChart3, Settings2 } from 'lucide-react';
 import { useNavigate } from 'react-router-dom';
 import { AILoader } from '@/components/ui/ai-loader';
 
@@ -52,36 +52,32 @@ export default function AIOperationsServices() {
                         AI for <span className="text-accent-gold">Operations</span>
                     </h1>
                     <p className="text-xl text-white/50 max-w-2xl mx-auto font-light">
-                        Optimize your internal processes and gain real-time visibility with intelligent operational systems.
+                        Optimize your business back-bone with intelligent monitoring, forecasting, and resource management systems.
                     </p>
                 </motion.div>
 
                 <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
                     <ServiceCard
-                        icon={BarChart}
-                        title="Intelligence & Reporting"
+                        icon={LayoutDashboard}
+                        title="Business Intelligence"
                         items={[
                             "KPI dashboards",
-                            "Auto-report generation",
-                            "Real-time visibility"
+                            "Auto-report generation"
                         ]}
                     />
                     <ServiceCard
-                        icon={Settings}
-                        title="Supply Chain & Procurement"
+                        icon={BarChart3}
+                        title="Supply Chain & Inventory"
                         items={[
                             "Inventory forecasting",
-                            "Procurement automation",
-                            "Vendor management"
+                            "Procurement automation"
                         ]}
                     />
                     <ServiceCard
-                        icon={Calendar}
-                        title="Efficiency"
+                        icon={Settings2}
+                        title="Efficiency Systems"
                         items={[
-                            "Scheduling optimization",
-                            "Resource allocation",
-                            "Workflow streamlining"
+                            "Scheduling optimization"
                         ]}
                     />
                 </div>

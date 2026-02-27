@@ -27,7 +27,7 @@ const ServiceCard = ({ title, items, icon: Icon }: any) => (
     </motion.div>
 );
 
-export default function DataEngineeringServices() {
+export default function AIDataEngineering() {
     const navigate = useNavigate();
 
     return (
@@ -52,36 +52,32 @@ export default function DataEngineeringServices() {
                         Data <span className="text-accent-gold">Engineering</span> & Infrastructure
                     </h1>
                     <p className="text-xl text-white/50 max-w-2xl mx-auto font-light">
-                        Build the robust, secure, and scalable foundation required for enterprise-grade AI performance.
+                        Build the robust foundation your AI needs with scalable data pipelines and secure cloud infrastructure.
                     </p>
                 </motion.div>
 
                 <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
                     <ServiceCard
                         icon={Database}
-                        title="Data Foundations"
+                        title="Data Architecture"
                         items={[
                             "Data cleaning pipelines",
                             "Data warehousing",
-                            "ETL/ELT automation"
+                            "API integrations"
                         ]}
                     />
                     <ServiceCard
                         icon={Cloud}
-                        title="Connectivity & Cloud"
+                        title="Cloud Solutions"
                         items={[
-                            "API integrations",
-                            "Cloud deployment",
-                            "Scalable serverless architecture"
+                            "Cloud deployment"
                         ]}
                     />
                     <ServiceCard
                         icon={ShieldCheck}
-                        title="Security & Architecture"
+                        title="Security & Scale"
                         items={[
-                            "Secure AI system architecture",
-                            "Enterprise data privacy",
-                            "System monitoring & redundancy"
+                            "Secure AI system architecture"
                         ]}
                     />
                 </div>

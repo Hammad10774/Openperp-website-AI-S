@@ -1,6 +1,6 @@
 import React from 'react';
 import { motion } from 'framer-motion';
-import { ArrowLeft, TrendingUp, Users, Zap } from 'lucide-react';
+import { ArrowLeft, Database, Mic2, Zap } from 'lucide-react';
 import { useNavigate } from 'react-router-dom';
 import { AILoader } from '@/components/ui/ai-loader';
 
@@ -52,36 +52,33 @@ export default function AISalesServices() {
                         AI for <span className="text-accent-gold">Sales</span> Teams
                     </h1>
                     <p className="text-xl text-white/50 max-w-2xl mx-auto font-light">
-                        Empower your sales force with intelligent tools to close deals faster and eliminate manual grunt work.
+                        Empower your sales force with intelligent tools that automate the grunt work and focus on closing deals.
                     </p>
                 </motion.div>
 
                 <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
                     <ServiceCard
-                        icon={TrendingUp}
+                        icon={Database}
                         title="Sales Intelligence"
                         items={[
                             "CRM enrichment",
-                            "Lead scoring systems",
-                            "Sales call summarization"
+                            "Lead scoring systems"
                         ]}
                     />
                     <ServiceCard
-                        icon={Users}
-                        title="Communication"
+                        icon={Mic2}
+                        title="Interaction Support"
                         items={[
-                            "AI objection handling assistant",
-                            "Automated follow-ups",
-                            "Personalized outreach"
+                            "Sales call summarization",
+                            "AI objection handling assistant"
                         ]}
                     />
                     <ServiceCard
                         icon={Zap}
-                        title="Execution"
+                        title="Workflow Automation"
                         items={[
                             "Proposal automation",
-                            "Contract generation",
-                            "Sales workflow optimization"
+                            "Automated follow-ups"
                         ]}
                     />
                 </div>

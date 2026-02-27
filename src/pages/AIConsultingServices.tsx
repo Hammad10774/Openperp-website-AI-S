@@ -1,6 +1,6 @@
 import React from 'react';
 import { motion } from 'framer-motion';
-import { ArrowLeft, Compass, Map, pieChart } from 'lucide-react';
+import { ArrowLeft, Search, Map as MapIcon, Compass } from 'lucide-react';
 import { useNavigate } from 'react-router-dom';
 import { AILoader } from '@/components/ui/ai-loader';
 
@@ -52,36 +52,32 @@ export default function AIConsultingServices() {
                         AI <span className="text-accent-gold">Consulting</span> & Strategy
                     </h1>
                     <p className="text-xl text-white/50 max-w-2xl mx-auto font-light">
-                        Empower your leadership with a clear, high-ROI AI roadmap tailored to your unique business goals.
+                        Architect your future with data-driven strategy, ROI modeling, and a technical roadmap built for scale.
                     </p>
                 </motion.div>
 
                 <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
                     <ServiceCard
-                        icon={Compass}
-                        title="Discovery & Audit"
+                        icon={Search}
+                        title="Analysis & Audit"
                         items={[
                             "AI Readiness Audit",
-                            "AI Opportunity Mapping",
-                            "Competitor AI Benchmarking"
+                            "AI Opportunity Mapping"
                         ]}
                     />
                     <ServiceCard
-                        icon={Map}
-                        title="Strategic Planning"
+                        icon={Compass}
+                        title="Strategic Roadmap"
                         items={[
                             "AI Implementation Roadmap",
-                            "Digital Transformation Planning",
-                            "Resource & Talent Planning"
+                            "Digital Transformation Planning"
                         ]}
                     />
                     <ServiceCard
-                        icon={pieChart}
-                        title="Commercial Viability"
+                        icon={MapIcon}
+                        title="Value Engineering"
                         items={[
-                            "AI ROI Modeling",
-                            "Cost-Benefit Analysis",
-                            "Scalability Assessment"
+                            "AI ROI Modeling"
                         ]}
                     />
                 </div>

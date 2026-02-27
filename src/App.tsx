@@ -42,7 +42,7 @@ import AIHRServices from './pages/AIHRServices';
 import AIFinanceServices from './pages/AIFinanceServices';
 import AIConsultingServices from './pages/AIConsultingServices';
 import AISaaSDevelopment from './pages/AISaaSDevelopment';
-import DataEngineeringServices from './pages/DataEngineeringServices';
+import AIDataEngineering from './pages/AIDataEngineering';
 
 // --- Components ---
 
@@ -63,7 +63,7 @@ const services = [
   { name: "AI for Finance & Accounting", path: "/ai-finance-services" },
   { name: "AI Consulting & Strategy", path: "/ai-consulting-services" },
   { name: "AI SaaS Development", path: "/ai-saas-development" },
-  { name: "Data Engineering & Infrastructure", path: "/data-engineering-services" }
+  { name: "Data Engineering & Infrastructure", path: "/data-engineering-infrastructure" }
 ];
 
 const ServicesDropdown = () => {
@@ -513,7 +513,7 @@ export default function App() {
             <Route path="/ai-finance-services" element={<AIFinanceServices />} />
             <Route path="/ai-consulting-services" element={<AIConsultingServices />} />
             <Route path="/ai-saas-development" element={<AISaaSDevelopment />} />
-            <Route path="/data-engineering-services" element={<DataEngineeringServices />} />
+            <Route path="/data-engineering-infrastructure" element={<AIDataEngineering />} />
           </Routes>
         </main>
 

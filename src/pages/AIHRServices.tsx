@@ -1,6 +1,6 @@
 import React from 'react';
 import { motion } from 'framer-motion';
-import { ArrowLeft, Users, Search, GraduationCap } from 'lucide-react';
+import { ArrowLeft, Users, GraduationCap, LifeBuoy } from 'lucide-react';
 import { useNavigate } from 'react-router-dom';
 import { AILoader } from '@/components/ui/ai-loader';
 
@@ -49,39 +49,35 @@ export default function AIHRServices() {
                     className="text-center mb-20"
                 >
                     <h1 className="text-5xl md:text-7xl font-extrabold mb-6 tracking-tight">
-                        AI for <span className="text-accent-gold">HR</span> & Talent
+                        AI for <span className="text-accent-gold">HR</span> Teams
                     </h1>
                     <p className="text-xl text-white/50 max-w-2xl mx-auto font-light">
-                        Modernize your workforce management with intelligent recruitment, training, and employee intelligence systems.
+                        Modernize your human resources with AI-driven recruitment, development, and support systems.
                     </p>
                 </motion.div>
 
                 <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
                     <ServiceCard
-                        icon={Search}
+                        icon={Users}
                         title="Recruitment & Hiring"
                         items={[
                             "Resume screening",
-                            "Interview assistant",
-                            "Candidate matching"
-                        ]}
-                    />
-                    <ServiceCard
-                        icon={Users}
-                        title="Employee Intelligence"
-                        items={[
-                            "Employee performance analysis",
-                            "Internal knowledge chatbot",
-                            "Sentiment monitoring"
+                            "Interview assistant"
                         ]}
                     />
                     <ServiceCard
                         icon={GraduationCap}
-                        title="L&D Optimization"
+                        title="Talent Intelligence"
                         items={[
-                            "Training recommendation engines",
-                            "Skill gap analysis",
-                            "Automated onboarding"
+                            "Employee performance analysis",
+                            "Training recommendation engines"
+                        ]}
+                    />
+                    <ServiceCard
+                        icon={LifeBuoy}
+                        title="Internal Support"
+                        items={[
+                            "Internal knowledge chatbot"
                         ]}
                     />
                 </div>

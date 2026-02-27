@@ -49,10 +49,10 @@ export default function AIMarketingServices() {
                     className="text-center mb-20"
                 >
                     <h1 className="text-5xl md:text-7xl font-extrabold mb-6 tracking-tight">
-                        AI-Powered <span className="text-accent-gold">Marketing</span> Services
+                        AI-Powered <span className="text-accent-gold">Marketing</span>
                     </h1>
                     <p className="text-xl text-white/50 max-w-2xl mx-auto font-light">
-                        Supercharge your growth with AI-driven lead generation, content creation, and media production.
+                        Supercharge your brand authority and lead generation with advanced AI media and content systems.
                     </p>
                 </motion.div>
 

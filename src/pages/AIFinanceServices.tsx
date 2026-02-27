@@ -52,7 +52,7 @@ export default function AIFinanceServices() {
                         AI for <span className="text-accent-gold">Finance</span> & Accounting
                     </h1>
                     <p className="text-xl text-white/50 max-w-2xl mx-auto font-light">
-                        Automate your financial operations and gain predictive insights with enterprise-grade AI accounting systems.
+                        Automate your financial workflows and gain predictive insights with enterprise-grade AI accounting systems.
                     </p>
                 </motion.div>
 
@@ -71,17 +71,14 @@ export default function AIFinanceServices() {
                         title="Financial Intelligence"
                         items={[
                             "Cashflow forecasting",
-                            "Financial report summarization",
-                            "Predictive budgeting"
+                            "Financial report summarization"
                         ]}
                     />
                     <ServiceCard
                         icon={ShieldCheck}
-                        title="Risk & Compliance"
+                        title="Risk Management"
                         items={[
-                            "Fraud detection",
-                            "Audit log automation",
-                            "Compliance monitoring"
+                            "Fraud detection"
                         ]}
                     />
                 </div>

@@ -1,6 +1,6 @@
 import React from 'react';
 import { motion } from 'framer-motion';
-import { ArrowLeft, Rocket, Globe, LayoutDashboard } from 'lucide-react';
+import { ArrowLeft, Rocket, Shield, Layout } from 'lucide-react';
 import { useNavigate } from 'react-router-dom';
 import { AILoader } from '@/components/ui/ai-loader';
 
@@ -52,36 +52,32 @@ export default function AISaaSDevelopment() {
                         AI <span className="text-accent-gold">SaaS</span> Development
                     </h1>
                     <p className="text-xl text-white/50 max-w-2xl mx-auto font-light">
-                        Turn your vision into a scalable, revenue-generating product with our end-to-end AI SaaS engineering.
+                        Bring your AI vision to life with scalable, high-performance SaaS products and internal platforms.
                     </p>
                 </motion.div>
 
                 <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
                     <ServiceCard
                         icon={Rocket}
-                        title="Product Engineering"
+                        title="Product Launch"
                         items={[
                             "Building AI-powered SaaS products",
-                            "Subscription-based AI systems",
-                            "Full-stack development"
+                            "White-label AI tools"
                         ]}
                     />
                     <ServiceCard
-                        icon={Globe}
-                        title="Scale & Distribution"
+                        icon={Shield}
+                        title="Enterprise Platforms"
                         items={[
-                            "White-label AI tools",
                             "Internal AI platforms",
-                            "Multi-tenant architecture"
+                            "Subscription-based AI systems"
                         ]}
                     />
                     <ServiceCard
-                        icon={LayoutDashboard}
-                        title="UI & Experience"
+                        icon={Layout}
+                        title="UI/UX & Analytics"
                         items={[
-                            "Custom dashboards",
-                            "Analytics interfaces",
-                            "AI interaction design"
+                            "Custom dashboards"
                         ]}
                     />
                 </div>
